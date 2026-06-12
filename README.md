@@ -6,16 +6,4 @@ Skillgap — это проект, разрабатываемый для поль
 
 Тест:
 PowerShell
-go build ./cmd/gap
-
-
-
-
-
-
-
-
-
-
-
-
+.\gap.exe
