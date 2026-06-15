@@ -16,9 +16,8 @@ func main() {
 
 	if arg == "hello" {
 		fmt.Println("hello, brother — это gap v" + version)
-		
-	}else{
+
+	} else {
 		fmt.Println("got:", arg)
 	}
-
 }
