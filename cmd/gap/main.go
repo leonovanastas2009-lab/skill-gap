@@ -28,8 +28,7 @@ func main() {
 	}else{
 		usage()
 		os.Exit(1)
-	}
-
+	} 
 }
 func usage() {
 	fmt.Fprintf(os.Stderr, "usage:\n")
