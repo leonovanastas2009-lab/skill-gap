@@ -31,7 +31,7 @@ func main() {
 	default:
 		usage()
 		os.Exit(1)
-	} 
+	}
 }
 func usage() {
 	fmt.Fprintf(os.Stderr, "usage:\n")
