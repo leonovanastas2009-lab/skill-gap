@@ -20,7 +20,7 @@ func main() {
 		fmt.Println("hello, brother это gap v" + version)
 	case "echo":
 		fmt.Println(os.Args[2:])
-	default :
+	default:
 		usage()
 		os.Exit(1)
 	}
