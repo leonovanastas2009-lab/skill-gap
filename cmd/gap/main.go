@@ -15,11 +15,12 @@ func main() {
 
 	arg := os.Args[1]
 
-	if arg == "hello" {
+	switch arg {
+	case "hello":
 		fmt.Println("hello, brother это gap v" + version)
-	} else if arg == "echo" {
+	case "echo":
 		fmt.Println(os.Args[2:])
-	} else {
+	default :
 		usage()
 		os.Exit(1)
 	}
