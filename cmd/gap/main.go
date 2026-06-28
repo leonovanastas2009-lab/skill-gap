@@ -9,15 +9,29 @@ const version = "0.1"
 
 func main() {
 	if len(os.Args) < 2 {
-		return
+		usage()
+		os.Exit(1)
 	}
 
-	arg := os.Args[1]
+	switch os.Args[1] {
+	case "hello":
+		fmt.Println("hello, brother это gap v" + version)
+	case "echo":
+		if len(os.Args) < 3 {
+			usage()
+			os.Exit(1)
+		}
 
-	if arg == "hello" {
-		fmt.Println("hello, brother — это gap v" + version)
-
-	} else {
-		fmt.Println("got:", arg)
+		fmt.Println(os.Args[2:])
+	default:
+		usage()
+		os.Exit(1)
 	}
+
+}
+
+func usage() {
+	fmt.Fprintln(os.Stderr, "usage:")
+	fmt.Fprintln(os.Stderr, "gap hello")
+	fmt.Fprintln(os.Stderr, "gap echo ...")
 }
