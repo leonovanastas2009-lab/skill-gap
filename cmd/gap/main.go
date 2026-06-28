@@ -13,12 +13,15 @@ func main() {
 		os.Exit(1)
 	}
 
-	arg := os.Args[1]
-
-	switch arg {
+	switch os.Args[1] {
 	case "hello":
 		fmt.Println("hello, brother это gap v" + version)
 	case "echo":
+		if len(os.Args) < 3 {
+			usage()
+			os.Exit(1)
+		}
+
 		fmt.Println(os.Args[2:])
 	default:
 		usage()
@@ -26,8 +29,9 @@ func main() {
 	}
 
 }
+
 func usage() {
-	fmt.Fprintf(os.Stderr, "usage:\n")
-	fmt.Fprintf(os.Stderr, "gap hello\n")
-	fmt.Fprintf(os.Stderr, "gap echo ...\n")
+	fmt.Fprintln(os.Stderr, "usage:")
+	fmt.Fprintln(os.Stderr, "gap hello")
+	fmt.Fprintln(os.Stderr, "gap echo ...")
 }
