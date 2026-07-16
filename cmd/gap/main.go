@@ -18,7 +18,10 @@ func main() {
 	case "hello":
 		helloflags := flag.NewFlagSet("hello", flag.ExitOnError)
 		name := helloflags.String("name", "brother", "имя")
-		helloflags.Parse(os.Args[2:])
+		if err := helloflags.Parse(os.Args[2:]); err != nil {
+			os.Exit(1)
+		}
+
 		fmt.Println("Привет, " + *name + " это gap v" + version)
 
 	case "echo":
