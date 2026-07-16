@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 )
@@ -15,7 +16,11 @@ func main() {
 
 	switch os.Args[1] {
 	case "hello":
-		fmt.Println("hello, brother это gap v" + version)
+		helloflags := flag.NewFlagSet("hello", flag.ExitOnError)
+		name := helloflags.String("name", "brother", "имя")
+		helloflags.Parse(os.Args[2:])
+		fmt.Println("Привет, " + *name + " это gap v" + version)
+
 	case "echo":
 		if len(os.Args) < 3 {
 			usage()
