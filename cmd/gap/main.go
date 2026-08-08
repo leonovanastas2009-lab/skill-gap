@@ -18,6 +18,7 @@ func main() {
 	case "hello":
 		helloflags := flag.NewFlagSet("hello", flag.ExitOnError)
 		name := helloflags.String("name", "brother", "имя")
+
 		if err := helloflags.Parse(os.Args[2:]); err != nil {
 			os.Exit(1)
 		}
