@@ -23,7 +23,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		fmt.Fprintln(os.Stdout, "Привет, "+*name+" это gap v"+version)
+		fmt.Fprintf(os.Stdout, "Привет, %s это gap v%s\n", *name, version)
 
 	case "echo":
 		if len(os.Args) < 3 {
